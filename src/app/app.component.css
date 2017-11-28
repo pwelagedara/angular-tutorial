@@ -1,0 +1,12 @@
+.danger {
+	color: red;
+	font-weight: bold;
+}
+
+.safe {
+	text-decoration: underline;
+}
+
+.changed {
+	font-style: italic;
+}

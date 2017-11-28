@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<layout-header></layout-header>
+<router-outlet></router-outlet>
+
+<div style="text-align:center">
+
+
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <!-- Local variables -->
+  <h2 #myH2>My H2</h2>
+  <p>{{myH2.innerText}}</p>
+
+  <input #count value="My Input" (keyup)="0"> 
+  <!-- keyup to update automatically -->
+
+   <p>{{count.value.length}}</p>
+
+   <button (click)="myFunction(count)">My Button</button>
+
+   <!-- Class binding -->
+   <p [class.danger]="alertStatus('danger')">Class Binding Example</p>
+
+  <p [ngClass]="myClasses">Class Binding Example2</p>
+
+  <!-- Style binding -->
+  <p [style.font-weight]="myWeight">Style Binding Example</p>
+
+  <p [style.font-weight]="myWeightBoolean? 'bold': 'normal'">Style Binding Example2</p>
+
+  <p [ngStyle]="myStyles">Style Binding Example3</p>
+
+  <!-- Property binding -->
+  <img [src]="logoUrl"/>
+
+  <button [disabled]="buttonState">My Button2</button>
+
+  <!-- Event binding -->
+   <button (click)="toggleLogo($event)">Toggle Logo</button>
+
+   <img [src]="logoUrl" *ngIf="buttonState2"/>
+   <button (click)="toggleLogo2()" ng>Toggle Logo2</button>
+
+   <input type="text" (keyup)="keyPress($event.target.value)"> 
+   <p>{{typed}}</p>
+
+      <input type="text" (keyup.enter)="keyPress2($event.target.value)"> 
+   <p>{{typed2}}</p>
+
+   <!-- Animations -->
+
+   <br/>   <br/>    <br/>
+   <p [@myAnimation]="animationState">This is the paragraph to animate</p>
+   <button (click)="animate()">Animate the Paragraph</button>
+
+  <br/>   <br/>    <br/>
+   <p [@myAnimation2]="animationState2">This is the 2nd paragraph to animate</p>
+   <button (click)="animate2()">Animate the Paragraph</button>
+
+   <!-- Services -->
+   <p>{{ someProperty }}</p>
+
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
